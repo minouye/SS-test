@@ -6,6 +6,7 @@ gem 'pg'
 gem "jquery-rails"
 
 gem 'omniauth-twitter'
+gem 'twitter'
 
 group :assets do
   gem 'uglifier'
