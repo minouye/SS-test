@@ -5,6 +5,10 @@ gem 'rails', '3.2.16'
 gem 'pg'
 gem "jquery-rails"
 
+group :assets do
+  gem 'uglifier'
+end 
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 

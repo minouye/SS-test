@@ -31,6 +31,7 @@ GEM
     arel (3.0.3)
     builder (3.0.4)
     erubis (2.7.0)
+    execjs (2.0.2)
     hike (1.2.3)
     i18n (0.6.9)
     journey (1.0.4)
@@ -81,6 +82,9 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.38)
+    uglifier (2.3.1)
+      execjs (>= 0.3.0)
+      json (>= 1.8.0)
 
 PLATFORMS
   ruby
@@ -89,3 +93,4 @@ DEPENDENCIES
   jquery-rails
   pg
   rails (= 3.2.16)
+  uglifier
