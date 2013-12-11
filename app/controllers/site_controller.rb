@@ -17,7 +17,7 @@ class SiteController < ApplicationController
   	@query = query
 
 		if current_user
-  		@tweets = client.search(query) 
+  		@tweets = client.search(query, :count => 20) 
   	end
   end
 
@@ -34,7 +34,7 @@ class SiteController < ApplicationController
 		else
 			user = params[:screenname]
 		end
-  	@tweets = client.user_timeline(user) 
+  	@tweets = client.user_timeline(user, :count => 20) 
   	@screenname = user
 
  	end

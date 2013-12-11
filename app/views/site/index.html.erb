@@ -16,16 +16,14 @@
 
 
 
- 	 <form class="navbar-form navbar-left" role="search" action="/" method="get">
+ 	 <form class="navbar-form navbar-left" role="search" action="/" method="get" style="padding-left:0">
       <div class="form-group">
-        <input type="text" class="form-control" name="q" placeholder="Search for tweets" style="width:300px;">
+        <input type="text" class="form-control" name="q" placeholder="Search for tweets" style="width:600px;padding:15px;height: 50px;font-size: 20px;">
       </div>
-      <button type="submit" class="btn btn-default">Search</button>
+      <button type="submit" class="btn btn-default btn-lg" style="padding:12px;">Search</button>
     </form><br/>
-
-<div style="clear:both"><br/><hr/></div>
-
-<h1>20 tweets for <em><%= @query -%></em></h1>
+<div class="clear:both"><br/><br/></div>
+<h1 class="page-header">20 tweets for <em><%= @query -%></em></h1>
 
 <%- @tweets.each do |tweet| -%>
 <div class="media">
@@ -34,11 +32,9 @@
   </a>
   <div class="media-body">
     <h4 class="media-heading"><%= tweet.user.name -%> <small><%= link_to "@#{tweet.user.screen_name}", "/tweets/#{tweet.user.screen_name}" -%></small></h4>
-    <%= tweet.text -%>
+    <%= tweet.text -%><br/><small style="color:#aaa"><%= Time.parse(tweet.created_at.to_s).strftime("Tweeted on %d %b") -%></small>
   </div>
 </div>
 <%- end -%>
 
-<%= @tweets.class -%>
-  <%= @tweets.inspect -%>
-  <%- end -%>
+<%- end -%>

@@ -1,5 +1,5 @@
 
-<h3>Tweets for <%= @screenname -%></h3>
+<h1 class="page-header">Tweets by <em><%= @screenname -%></em></h3>
 
 <%- @tweets.each do |tweet| -%>
 <div class="media">
@@ -8,7 +8,7 @@
   </a>
   <div class="media-body">
         <h4 class="media-heading"><%= tweet.user.name -%> <small><%= link_to "@#{tweet.user.screen_name}", "/tweets/#{tweet.user.screen_name}" -%></small></h4>
-    <%= tweet.text -%>
+    <%= tweet.text -%><br/><small style="color:#aaa"><%= Time.parse(tweet.created_at.to_s).strftime("Tweeted on %d %b") -%></small>
   </div>
 </div>
 <%- end -%>
