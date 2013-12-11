@@ -4,6 +4,8 @@ SsTest::Application.routes.draw do
   root :to => 'site#index'
 
   match 'auth/twitter/callback', to: 'sessions#create'
+  match 'logout', to: 'sessions#destroy', as: 'logout'
+  match 'auth/failure', to: redirect('/')
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
