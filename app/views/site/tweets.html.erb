@@ -1,0 +1,14 @@
+
+<h3>Tweets for <%= @screenname -%></h3>
+
+<%- @tweets.each do |tweet| -%>
+<div class="media">
+  <a class="pull-left" href="#">
+    <img class="media-object" src="<%= tweet.user.profile_image_url-%>" alt="...">
+  </a>
+  <div class="media-body">
+        <h4 class="media-heading"><%= tweet.user.name -%> <small><%= link_to "@#{tweet.user.screen_name}", "/tweets/#{tweet.user.screen_name}" -%></small></h4>
+    <%= tweet.text -%>
+  </div>
+</div>
+<%- end -%>

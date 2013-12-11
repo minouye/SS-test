@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SsTest</title>
+  <title>StackSocial Coding Test</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
 
@@ -14,10 +14,58 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
   <%= csrf_meta_tags %>
+
+  <%- if !current_user -%>
+  <style type="text/css">
+body { 
+  background: url(http://31.media.tumblr.com/234548bb90cc22d64ff5dcd5a3d73e40/tumblr_mtw7pktaK11st5lhmo1_1280.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+  </style>
+ 	<%- end -%>
+
+
 </head>
 <body>
 
+	<nav class="navbar navbar-inverse" role="navigation" style="border-radius:0">
+		<div class="container">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="/">StackSocial Test App</a>
+  </div>
+
+  <%- if current_user -%>
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-1">
+ 		<ul class="nav navbar-nav navbar-right">
+      <li style="color: #999;margin-top:15px;">Signed in as <%= current_user.name %></li>
+    	<li><%= link_to "Logout", logout_path %></li>
+    
+    </ul>
+
+  
+  </div><!-- /.navbar-collapse -->
+	<%- end -%>
+
+	</div>
+</nav>
+
+
+<div class="container">
+
 <%= yield %>
+
+</div>
 
 </body>
 </html>
